@@ -1,54 +1,69 @@
----
-difficulty: 2
-tags: Coding Challenge, ES6 Features
-chapter: "Chapter 7: ES6+ Features"
-training: true
----
+# Harmony Hub: ES6+ Syntax Demo
 
-# Harmony Hub:  ES6+ Syntax Challenge
+A digital music studio application showcasing modern JavaScript (ES6+) features including rest/spread operators, destructuring, template literals, and default parameters.
 
-## Challenge Description
+## About
 
-Welcome to Harmony Hub, a cutting-edge digital music studio! As a newly hired JavaScript audio engineer, you need to use modern JavaScript features to create various audio processing and music production functions.
+Harmony Hub is a demonstration of ES6+ features applied to audio processing and music production functions. The project implements a Digital Audio Workstation interface with various utility functions for managing tracks, playlists, audio effects, and instrument tuning.
 
-Complete all tasks in `/src/main.js` to become Harmony Hub's star audio programmer!
+## Features
 
-## Requirements
-
-1. Track Metadata Formatter:
-
-   - Implement the `formatTrackMetadata` function that accepts a title, artist, and a variable number of genres as parameters.
-   - Return a formatted html string containing all provided information.
-   - Expect: 
-
+1. **Track Metadata Formatter**
+   - Formats track information (title, artist, genres) using template literals and rest parameters
+   - Accepts a variable number of genres and generates clean HTML output
+   - Example output:
       ```html
-            <div class="track-title">Bohemian Rhapsody</div>
-            <div class="track-artist">Queen</div>
-            <div class="track-genres">Rock, Progressive Rock, Opera Rock</div>
+      <div class="track-title">Bohemian Rhapsody</div>
+      <div class="track-artist">Queen</div>
+      <div class="track-genres">Rock, Progressive Rock, Opera Rock</div>
       ```
 
-2. Playlist Creator:
+2. **Playlist Creator**
+   - Creates playlists using the spread operator to combine arrays
+   - Accepts an existing playlist and any number of new track IDs
+   - Returns a new array with all tracks merged
 
-   - Implement the `createPlaylist` function that accepts an existing playlist array and any number of new track IDs.
-   - Return a new array containing all existing and newly added tracks.
+3. **Audio Effect Merger**
+   - Merges audio effect configurations using object spread syntax
+   - Combines default and custom effect objects
+   - Custom effects override default values
 
-3. Audio Effect Merger:
+4. **Mix Assignment**
+   - Assigns mix parameters with default values using object spread
+   - Automatically adds `isMuted` property set to false
+   - Preserves all original parameters (volume, pan, etc.)
 
-   - Implement the `mergeAudioEffects` function that accepts a default effects object and a custom effects object.
-   - Return a new object merging properties from both input objects, prioritizing values from the custom effects.
+5. **Instrument Tuning Check**
+   - Retrieves instrument tuning frequencies using destructuring and default parameters
+   - Returns specified instrument frequency or defaults to 440 Hz (standard A4)
 
-4. Mix Assignment:
+## Installation
 
-   - Implement the `assignMixParameters` function that accepts a mix parameters object containing volume, pan.
-   - Return a new object with all properties from the input object and add a default 'isMuted' property set to false.
+```bash
+npm install
+```
 
-5. Instrument Tuning Check:
+## Usage
 
-   - Implement the `checkInstrumentTuning` function that accepts a tuning object and an instrument name.
-   - Return the tuning frequency for the specified instrument, defaulting to 440 if not present.
+Start the development server:
 
-## Expected Output
+```bash
+npm run dev
+```
 
-After completing the challenge, you will see Harmony Hub's Digital Audio Workstation interface:
+Run tests:
 
-![Harmony Hub DAW Screenshot](https://raw.githubusercontent.com/JavaScript-Certification/images/refs/heads/main/images/training/7-1/harmony-hub.jpg)
+```bash
+npm test
+```
+
+## Preview
+
+![Harmony Hub DAW Interface](https://raw.githubusercontent.com/JavaScript-Certification/images/refs/heads/main/images/training/7-1/harmony-hub.jpg)
+
+## Technologies
+
+- JavaScript ES6+
+- Vite
+- Tailwind CSS
+- Vitest
