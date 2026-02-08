@@ -9,10 +9,10 @@ import {
 
 describe('formatTrackMetadata', () => {
   it('should correctly format track metadata', () => {
-    const result = formatTrackMetadata('Test Title', 'Test Artist', 'Pop', 'Rock')
+    const result = formatTrackMetadata('Test Title', 'Test Artist', ['Pop', 'Rock'])
     expect(result).toContain('<div class="track-title">Test Title</div>')
     expect(result).toContain('<div class="track-artist">Test Artist</div>')
-    expect(result).toContain('<div class="track-genres">Pop,Rock</div>')
+    expect(result).toContain('<div class="track-genres">Pop, Rock</div>')
   })
 })
 
